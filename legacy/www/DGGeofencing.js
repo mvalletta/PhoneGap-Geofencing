@@ -1,6 +1,6 @@
 /**
  * Geofencing.js
- *  
+ *
  * Phonegap Geofencing Plugin
  * Copyright (c) Dov Goldberg 2012
  * http://www.ogonium.com
@@ -37,7 +37,7 @@ var DGGeofencing = {
 	getWatchedRegionIds: function(success, fail) {
 		return Cordova.exec(success, fail, "DGGeofencing", "getWatchedRegionIds", []);
 	},
-	
+
 	/*
 	Params:
 	NONE
@@ -45,7 +45,7 @@ var DGGeofencing = {
 	getPendingRegionUpdates: function(success, fail) {
 		return Cordova.exec(success, fail, "DGGeofencing", "getPendingRegionUpdates", []);
 	},
-	
+
 	/*
 	Params:
 	NONE
@@ -53,7 +53,7 @@ var DGGeofencing = {
 	startMonitoringSignificantLocationChanges: function(success, fail) {
 		return Cordova.exec(success, fail, "DGGeofencing", "startMonitoringSignificantLocationChanges", []);
 	},
-	
+
 	/*
 	Params:
 	NONE
@@ -61,8 +61,8 @@ var DGGeofencing = {
 	stopMonitoringSignificantLocationChanges: function(success, fail) {
 		return Cordova.exec(success, fail, "DGGeofencing", "stopMonitoringSignificantLocationChanges", []);
 	},
-	
-	/* 
+
+	/*
 	This is used so the JavaScript can be updated when a region is entered or exited
 	*/
 	regionMonitorUpdate: function(regionupdate) {
@@ -72,8 +72,8 @@ var DGGeofencing = {
 		ev.initEvent('region-update', true, true, arguments);
 		document.dispatchEvent(ev);
 	},
-	
-	/* 
+
+	/*
 	This is used so the JavaScript can be updated when a significant change has occured
 	*/
 	locationMonitorUpdate: function(locationupdate) {
@@ -84,3 +84,7 @@ var DGGeofencing = {
 		document.dispatchEvent(ev);
 	}
 };
+
+if (typeof module !== 'undefined') {
+	module.exports = DGGeofencing;
+}

@@ -10,9 +10,6 @@
     outdated!
     <asset src="www/DGGeofencing.js" target="DGGeofencing.js" />
     -->
-    <js-module src="www/DGGeofencing.js" name="DGGeofencing">
-        <clobbers target="window.DGGeofencing" />
-    </js-module>
 
     <!-- android -->
     <!--
@@ -55,7 +52,8 @@
         <header-file src="src/iOS/DGGeofencing/DGGeofencing.h" />
         <source-file src="src/iOS/DGGeofencing/DGGeofencing.m" compiler-flags="-fno-objc-arc" />
 
-        <header-file src="src/iOS/DGGeofencing/DGGeofencingHelper.h" />
-        <source-file src="src/iOS/DGGeofencing/DGGeofencingHelper.m" compiler-flags="-fno-objc-arc" />
+        <js-module src="src/iOS/DGGeofencing/DGGeofencing.js" name="DGGeofencing">
+            <clobbers target="window.DGGeofencing" />
+        </js-module>
     </platform>
 </plugin>
